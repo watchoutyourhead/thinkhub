@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="./images/favicon.png">
+
+  <title>ThinkHub</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="number"],
+    input[type="datetime-local"],
+    input[type="file"],
+    input[type="checkbox"] {
+      width: calc(100% - 10px);
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ThinkHub
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+            <div class="quote_btn-container">
+              <a href="signup.html" class="quote_btn">
+                회원가입
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+    <!-- openlecture section -->
+
+    <section class="case_section layout_padding">
+        <h2>강의실 지원하기</h2>
+
+<form id="lectureForm" class="form_section">
+  <div>
+    <label for="lectureTitle">강의실 명칭:</label>
+    <input type="text" id="lectureTitle" name="lectureTitle" placeholder="가게 이름을 입력해주세요." required>
+  </div>
+  <div>
+    <label for="lectureThumbnail">썸네일 사진 첨부:</label>
+    <input type="file" id="lectureThumbnail" name="lectureThumbnail" accept="image/*" onchange="previewThumbnail(event)">
+    <div class="thumbnail_preview" id="thumbnailPreview"></div>
+  </div>
+  <div>
+    <label for="lectureContent">가게 분위기와 부합하는 강의:</label>
+    <textarea id="lectureContent" name="lectureContent" placeholder="강의실에서 강의 가능한 내용을 입력해주세요." required></textarea>
+  </div>
+  <div>
+    <label for="lectureMaterials">시설 현황:</label>
+    <textarea id="lectureMaterials" name="lectureMaterials" placeholder="강의에 맞게 갖추고 있는 시설, 물품 현황을 입력해주세요." required></textarea>
+  </div>
+  <div>
+    <label for="targetAudience">최대 수용 인원:</label>
+    <input type="number" id="targetAudience" name="targetAudience" placeholder="수용 인원을 입력해주세요." min="0" max="50" required>
+  </div>
+  <div>
+    <label for="lectureSchedule">대관 가능 일정:</label>
+    <input type="date" id="lectureSchedule" name="lectureSchedule" required>
+  </div>
+  <div>
+    <label for="lectureTime">가능 시간(일별, 시간 단위):</label>
+    <input type="number" id="lectureTime" name="lectureTime" placeholder="가능 시간(시간 단위)" min="0" max="4" required>
+  </div>
+  <div>
+    <label for="additionalSupport">추가 요청사항:</label>
+    <textarea id="additionalSupport" name="additionalSupport" placeholder="추가 지원 및 커뮤니케이션 정보를 입력해주세요." required></textarea>
+  </div>
+  <div>
+    <input type="checkbox" id="copyrights" name="copyrights">
+    <label for="copyrights">강의실 대관시 강의와 영업은 반드시 구별 되도록 합니다.</label>
+  </div>
+  <div>
+    <label for="lectureSlides">강의실 내부 사진 첨부하기:</label>
+    <input type="file" id="lectureSlides" name="lectureSlides">
+  </div>
+  <button type="submit">제출하기</button>
+</form>
+<p>계정이 없으신가요? <a href="signup.html">여기를 클릭하여 회원가입을 해주세요.</a></p>
+<script>
+function previewThumbnail(event) {
+  var thumbnailPreview = document.getElementById('thumbnailPreview');
+  thumbnailPreview.innerHTML = '';
+
+  var files = event.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var file = files[i];
+    if (file.type.match('image.*')) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var img = document.createElement('img');
+        img.src = e.target.result;
+        thumbnailPreview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  thumbnailPreview.style.display = 'block';
+}
+</script>
+        
+        </body>
+      </section>
+    
+      <!-- end openlecture section -->
+
+
+
+      <div class="footer_container">
+        <!-- info section -->
+    
+        <section class="info_section ">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-lg-3 ">
+                <div class="info_detail">
+                  <h4>
+                    ThinkHub
+                  </h4>
+                  <p>
+                    지식을 공유하고 세상을 변화시키다
+    학습을 혁신하는 새로운 길, 공간 가치의 놀라운 변화와 새로운 성장의 기회, 무한한 가능성을 열어주는
+                    강의의 창조자들을 위한 플랫폼
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-2 mx-auto">
+                <div class="info_link_box">
+                  <h4>
+                    Links
+                  </h4>
+                  <div class="info_links">
+                    <a class="" href="index.html">
+                      Home
+                    </a>
+                    <a class="" href="about.html">
+                      About
+                    </a>
+                    <a class="" href="service.html">
+                      Services
+                    </a>
+                    <a class="" href="contact.html">
+                      Contact Us
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 ">
+                <h4>
+                  Subscribe
+                </h4>
+                <form action="#">
+                  <input type="text" placeholder="Enter email" />
+                  <button type="submit">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
+              <div class="col-md-6 col-lg-3 mb-0 ml-auto">
+                <div class="info_contact">
+                  <h4>
+                    Address
+                  </h4>
+                  <div class="contact_link_box">
+                    <a href="">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                      <span>
+                        Location
+                      </span>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                      <span>
+                        Call +82 1040209308
+                      </span>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                      <span>
+                        barracoon85@gmail.com
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="info_social">
+                  <a href="">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- end info section -->
+    
+        <!-- footer section -->
+        <footer class="footer_section">
+          <div class="container">
+            <p>
+              &copy; <span id="displayYear"></span> All Rights Reserved By
+              <a href="https://html.design/">ThinkHub</a>
+            </p>
+          </div>
+        </footer>
+        <!-- footer section -->
+      </div>
+    
+      <!-- jQery -->
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <!-- popper js -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+      </script>
+      <!-- bootstrap js -->
+      <script src="js/bootstrap.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- Google Map -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+      <!-- End Google Map -->
+    
+    </body>
+    
+    </html>
